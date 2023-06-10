@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 06, 2023 at 05:58 PM
+-- Generation Time: Jun 10, 2023 at 05:54 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -41,8 +41,29 @@ CREATE TABLE `mancity` (
 --
 
 INSERT INTO `mancity` (`id`, `nama`, `posisi`, `asal`, `no_punggung`, `gambar`) VALUES
-(1, 'Ederson', 'kiper', 'brazil', '31', 'ederson.jpg'),
-(2, 'halland', 'penyerang', 'norway', '9', 'halland.jpg');
+(1, 'Ederson', 'Kiper', 'brazil', '31', 'gambar'),
+(2, 'halland', 'Penyerang', 'norway', '9', 'gambar'),
+(23, 'Ederson', 'Kiper', 'brazil', '31', 'gambar');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`) VALUES
+(1, 'andrimc', '$2y$10$Pb8EzoXtnNeeN843IthfG.XQP96YT3/LG8wr0P5bItIrywCNZD9c6'),
+(2, 'admin', '$2y$10$fi/raaCxdSlgoGL5RES1DuwYdFk86qnHHYjc.QSyNFYBeOkt04Ijy');
 
 --
 -- Indexes for dumped tables
@@ -55,6 +76,12 @@ ALTER TABLE `mancity`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -62,6 +89,12 @@ ALTER TABLE `mancity`
 -- AUTO_INCREMENT for table `mancity`
 --
 ALTER TABLE `mancity`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
